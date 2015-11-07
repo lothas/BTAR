@@ -1,7 +1,6 @@
 package com.example.camera1;
 
 import java.io.IOException;
-
 import android.content.Context;
 import android.hardware.Camera;
 import android.util.Log;
