@@ -1,0 +1,50 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.bravo.MainActivity" >
+
+    <item
+        android:id="@+id/connect"
+        android:title="@string/MenuConnect">
+    </item>
+    <item
+        android:id="@+id/options"
+        android:title="@string/MenuOptions">
+        <!--<menu>
+            <item android:id="@+id/UpdateInterval" android:title="@string/MenuUpdateInterval">
+			    <menu><group android:checkableBehavior="single">
+			        <item android:id="@+id/Menu1000ms"
+			              android:title="@string/Menu1000ms" />
+			        <item android:id="@+id/Menu100ms"
+			              android:title="@string/Menu100ms" />
+			        <item android:id="@+id/Menu2000ms"
+			              android:title="@string/Menu2000ms" />
+			        <item android:id="@+id/Menu200ms"
+			              android:title="@string/Menu200ms" />
+			        <item android:id="@+id/Menu500ms"
+			              android:title="@string/Menu500ms" />
+			    </group>
+			    </menu>
+            </item>
+            <item android:id="@+id/MaxTimeOut" android:title="@string/MenuMaxTimeOut">
+                <menu><group android:checkableBehavior="single">
+			        <item android:id="@+id/Menu0tries"
+			              android:title="@string/Menu0" />
+			        <item android:id="@+id/Menu20tries"
+			              android:title="@string/Menu20" />
+			        <item android:id="@+id/Menu50tries"
+			              android:title="@string/Menu50" />
+			        <item android:id="@+id/Menu10tries"
+			              android:title="@string/Menu10" />
+			        <item android:id="@+id/Menuofftries"
+			              android:title="@string/Menu_1" />
+			    </group>
+			    </menu>
+            </item>
+        </menu>-->
+    </item>  
+    <item
+        android:id="@+id/about"
+        android:title="@string/MenuAbout">
+    </item>
+
+</menu>
