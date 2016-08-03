@@ -20,7 +20,6 @@ public class GameManager {
 	private TextView mTextTimeStemp; //TopRight
 	private TextView mTextBottomRight; //BottomRight
 	private TextView mTextBravoVersion;
-	private String mText;
 	private int mCoinDistribution, mNumOfTowers, mLazerDistribution;
 	private Random mRandomGenerator;
 	private boolean flagForDebug, gameStarted;
@@ -44,7 +43,7 @@ public class GameManager {
 		mTextTimeStemp.setText(String.format("Health: 100%%")); // 
 		mTextBottomRight = (TextView) mMainActivity.findViewById(R.id.TextBottomRight);
 		mTextBottomRight.setText(String.format(""));
-		myRobotGameplay = new roboRebe();
+		myRobotGameplay = new roboRebe(this);
 		
 		mGameTimer = new GameTimer(mMainActivity);
 		mGameTimer.start();
@@ -56,34 +55,34 @@ public class GameManager {
 	}
 	
 	public void printTopRight(String text){
-		mText = text;
+		final String msg = text;
 		mMainActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 // This code will always run on the UI thread, therefore is safe to modify UI elements.
-            	mTextDebug.setText(String.format(mText));
+            	mTextDebug.setText(String.format(msg));
             }
         });
 	}
 	
 	public void printTopLeft(String text){
-		mText = text;
+		final String msg = text;
 		mMainActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 // This code will always run on the UI thread, therefore is safe to modify UI elements.
-            	mTextTimeStemp.setText(String.format(mText));
+            	mTextTimeStemp.setText(String.format(msg));
             }
         });
 	}
 	
 	public void printBottomRight(String text){
-		mText = text;
+		final String msg = text;
 		mMainActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 // This code will always run on the UI thread, therefore is safe to modify UI elements.
-            	mTextBottomRight.setText(String.format(mText));
+            	mTextBottomRight.setText(String.format(msg));
             }
         });
 	}
@@ -165,7 +164,6 @@ public class GameManager {
 					} else {
 						if(!laserHitFlag){
 							myRobotGameplay.updateHealth(roboHealth.laser);
-							printTopLeft("Health: " + myRobotGameplay.getHealth() + "%%");
 						}
 						laserHitFlag = true;
 						return direction.stop;
@@ -200,7 +198,6 @@ public class GameManager {
 						objCenterX, objCenterY);
 				if(!towerHitFlag){
 					myRobotGameplay.updateHealth(roboHealth.obstacle);
-					printTopLeft("Health: " + myRobotGameplay.getHealth() + "%%");
 				}
 				towerHitFlag = true;
 				if(distBack < distFront){
@@ -231,7 +228,6 @@ public class GameManager {
 			float sizeDistRatio = centersDist/robSize;
 			if ( sizeDistRatio < sizeFactor ){ //TODO: find optimal
 				myRobotGameplay.updateScore(10);
-				printTopRight("Score: " + myRobotGameplay.getScore());
 				CoinDistribution(true);
 			}
 		}
