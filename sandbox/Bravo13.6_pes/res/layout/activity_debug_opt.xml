@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <EditText
+        android:id="@+id/TowerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="49dp"
+        android:ems="10"
+        android:hint="enter num of towers"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/TowerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TowerText"
+        android:layout_alignBottom="@+id/TowerText"
+        android:layout_toRightOf="@+id/TowerText"
+        android:text="Apply" />
+
+    <EditText
+        android:id="@+id/GhostText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TowerText"
+        android:layout_below="@+id/TowerButton"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:hint="enter ghost"
+        android:inputType="number" />
+
+</RelativeLayout>
